@@ -1,0 +1,142 @@
+[
+  {
+    "policy": "weak_weak_policy_generated_001",
+    "provider": "openai",
+    "model": "gpt-4o-mini",
+    "classification": "Weak",
+    "reason": "The policy grants full access to all S3 actions and resources without any conditions, indicating over-permissive access."
+  },
+  {
+    "policy": "weak_weak_policy_generated_001",
+    "provider": "ollama",
+    "model": "llama3.2:latest",
+    "classification": "Weak",
+    "reason": "The policy grants unrestricted access to all S3 resources without any contextual restrictions, increasing the risk of a potential blast radius in case of credential compromise."
+  },
+  {
+    "policy": "weak_weak_policy_generated_002",
+    "provider": "openai",
+    "model": "gpt-4o-mini",
+    "classification": "Weak",
+    "reason": "The policy grants unrestricted access to all EC2 actions and resources without any conditions, indicating over-permissive access."
+  },
+  {
+    "policy": "weak_weak_policy_generated_002",
+    "provider": "ollama",
+    "model": "llama3.2:latest",
+    "classification": "Weak",
+    "reason": "The policy grants unrestricted access to all EC2 resources without any contextual restrictions, increasing the risk of a blast radius in case of credential compromise."
+  },
+  {
+    "policy": "weak_weak_policy_generated_003",
+    "provider": "openai",
+    "model": "gpt-4o-mini",
+    "classification": "Weak",
+    "reason": "The policy grants unrestricted access to all Lambda actions and resources without any conditions, indicating over-permissive access."
+  },
+  {
+    "policy": "weak_weak_policy_generated_003",
+    "provider": "ollama",
+    "model": "llama3.2:latest",
+    "classification": "Weak",
+    "reason": "The policy grants unrestricted access to all Lambda actions and resources, increasing the risk of blast radius in case of credential compromise."
+  },
+  {
+    "policy": "weak_weak_policy_generated_004",
+    "provider": "openai",
+    "model": "gpt-4o-mini",
+    "classification": "Weak",
+    "reason": "The policy grants full access to all DynamoDB actions and resources without any conditions, indicating over-permissive access."
+  },
+  {
+    "policy": "weak_weak_policy_generated_004",
+    "provider": "ollama",
+    "model": "llama3.2:latest",
+    "classification": "Weak",
+    "reason": "The policy grants unrestricted access to DynamoDB resources with no conditions or context, increasing the risk of blast radius in case of credential compromise."
+  },
+  {
+    "policy": "weak_weak_policy_generated_005",
+    "provider": "openai",
+    "model": "gpt-4o-mini",
+    "classification": "Weak",
+    "reason": "The policy grants full access to all RDS actions on all resources without any conditions, indicating over-permissive access."
+  },
+  {
+    "policy": "weak_weak_policy_generated_005",
+    "provider": "ollama",
+    "model": "llama3.2:latest",
+    "classification": "Weak",
+    "reason": "The policy grants unrestricted access to all RDS resources without any contextual restrictions, increasing the risk of a potential blast radius in case of credential compromise."
+  },
+  {
+    "policy": "strong_strong_policy_generated_001",
+    "provider": "openai",
+    "model": "gpt-4o-mini",
+    "classification": "Weak",
+    "reason": "The policy allows a destructive action (TerminateInstances) on all EC2 instances without sufficient restriction on the resource scope, despite having a condition for MFA."
+  },
+  {
+    "policy": "strong_strong_policy_generated_001",
+    "provider": "ollama",
+    "model": "llama3.2:latest",
+    "classification": "Strong",
+    "reason": "The policy grants minimal permissions for terminating instances with MFA, reducing the blast radius in case of credential compromise."
+  },
+  {
+    "policy": "strong_strong_policy_generated_002",
+    "provider": "openai",
+    "model": "gpt-4o-mini",
+    "classification": "Strong",
+    "reason": "The policy allows a destructive action but is protected by a strong contextual condition requiring MFA."
+  },
+  {
+    "policy": "strong_strong_policy_generated_002",
+    "provider": "ollama",
+    "model": "llama3.2:latest",
+    "classification": "Strong",
+    "reason": "The policy grants minimal permissions and includes a conditional statement that requires MFA, reducing the risk of blast radius in case of credential compromise."
+  },
+  {
+    "policy": "strong_strong_policy_generated_003",
+    "provider": "openai",
+    "model": "gpt-4o-mini",
+    "classification": "Strong",
+    "reason": "The policy grants a specific permission with a strong contextual condition requiring MFA, minimizing risk."
+  },
+  {
+    "policy": "strong_strong_policy_generated_003",
+    "provider": "ollama",
+    "model": "llama3.2:latest",
+    "classification": "Strong",
+    "reason": "The policy grants minimal permissions and includes a conditional statement that requires MFA, reducing the risk of blast radius in case of credential compromise."
+  },
+  {
+    "policy": "strong_strong_policy_generated_004",
+    "provider": "openai",
+    "model": "gpt-4o-mini",
+    "classification": "Strong",
+    "reason": "The policy grants a specific action on a specific resource and includes a condition requiring MFA, which mitigates risk."
+  },
+  {
+    "policy": "strong_strong_policy_generated_004",
+    "provider": "ollama",
+    "model": "llama3.2:latest",
+    "classification": "Strong",
+    "reason": "The policy grants minimal permissions required for its intended purpose and includes a contextual restriction to ensure MFA is always enforced."
+  },
+  {
+    "policy": "strong_strong_policy_generated_005",
+    "provider": "openai",
+    "model": "gpt-4o-mini",
+    "classification": "Weak",
+    "reason": "The policy allows deletion of alarms on all resources with a wildcard, which increases risk despite the MFA condition."
+  },
+  {
+    "policy": "strong_strong_policy_generated_005",
+    "provider": "ollama",
+    "model": "llama3.2:latest",
+    "classification": "Weak",
+    "reason": "The policy grants unrestricted access to delete alarms without any specific resource restrictions, increasing the blast radius in case of credential compromise."
+  }
+]

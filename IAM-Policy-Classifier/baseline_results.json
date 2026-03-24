@@ -1,0 +1,30 @@
+[
+  {
+    "policy": "weak_baseline",
+    "provider": "openai",
+    "model": "gpt-4o-mini",
+    "classification": "Weak",
+    "reason": "The policy grants unrestricted permissions with '*' for both Action and Resource, and lacks any conditions, indicating over-permissive access."
+  },
+  {
+    "policy": "weak_baseline",
+    "provider": "ollama",
+    "model": "llama3.2:latest",
+    "classification": "Weak",
+    "reason": "The policy grants unrestricted access to all resources and actions, increasing the risk of a credential compromise leading to potential blast radius."
+  },
+  {
+    "policy": "strong_baseline",
+    "provider": "openai",
+    "model": "gpt-4o-mini",
+    "classification": "Strong",
+    "reason": "The policy allows a destructive action but is protected by a strong contextual condition requiring MFA."
+  },
+  {
+    "policy": "strong_baseline",
+    "provider": "ollama",
+    "model": "llama3.2:latest",
+    "classification": "Strong",
+    "reason": "The policy grants minimal permissions for its intended purpose and includes a contextual restriction to ensure MFA is always required."
+  }
+]

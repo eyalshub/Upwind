@@ -1,0 +1,5 @@
+policy,provider,model,classification,reason
+weak_baseline,openai,gpt-4o-mini,Weak,"The policy grants unrestricted permissions with '*' for both Action and Resource, and lacks any conditions, indicating over-permissive access."
+weak_baseline,ollama,llama3.2:latest,Weak,"The policy grants unrestricted access to all resources and actions, increasing the risk of a credential compromise leading to potential blast radius."
+strong_baseline,openai,gpt-4o-mini,Strong,The policy allows a destructive action but is protected by a strong contextual condition requiring MFA.
+strong_baseline,ollama,llama3.2:latest,Strong,The policy grants minimal permissions for its intended purpose and includes a contextual restriction to ensure MFA is always required.

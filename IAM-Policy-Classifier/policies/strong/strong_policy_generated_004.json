@@ -1,0 +1,15 @@
+{
+  "Version": "2022-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "iam:DeleteUser",
+      "Resource": "arn:aws:iam::123456789012:user/myUser",
+      "Condition": {
+        "Bool": {
+          "aws:MultiFactorAuthPresent": "true"
+        }
+      }
+    }
+  ]
+}

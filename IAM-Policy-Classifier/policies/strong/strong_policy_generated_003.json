@@ -1,0 +1,15 @@
+{
+  "Version": "2022-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "lambda:DeleteFunction",
+      "Resource": "arn:aws:lambda:eu-central-1:123456789012:function:myFunction",
+      "Condition": {
+        "Bool": {
+          "aws:MultiFactorAuthPresent": "true"
+        }
+      }
+    }
+  ]
+}

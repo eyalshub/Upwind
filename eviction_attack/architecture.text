@@ -1,0 +1,5 @@
+├── simulation.py      # Core memory model + eviction policies
+├── policies.py        # All eviction strategies (pluggable)
+├── attack_demo.py     # Deterministic attack + evaluation
+├── benchmark.py       # Random workload evaluation
+└── test_simulation   # test for simulation

@@ -1,0 +1,44 @@
+[
+  {
+    "policy": "weak",
+    "provider": "openai",
+    "model": "gpt-4o-mini",
+    "classification": "Weak",
+    "reason": "The policy grants broad permissions with wildcards for both Action and Resource, and lacks any conditions, indicating high risk."
+  },
+  {
+    "policy": "weak",
+    "provider": "ollama",
+    "model": "phi:latest",
+    "classification": "TIMEOUT",
+    "reason": "Failed to extract JSON from LLM output:\n{\n  \"policy\": \"{\"Version\":\"2022-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Action\":\"*\",\"Resource\":\"*\",\"Condition\":null}]}\",\n  \"classification\": \"Weak | Strong\",\n  \"reason\": \"The policy allows all actions on all resources without any conditions, which increases the risk of unauthorized access and potential blast radius.\"\n}"
+  },
+  {
+    "policy": "weak",
+    "provider": "ollama",
+    "model": "llama3.2:latest",
+    "classification": "Weak",
+    "reason": "Broad Allow statement without conditions increases risk"
+  },
+  {
+    "policy": "strong",
+    "provider": "openai",
+    "model": "gpt-4o-mini",
+    "classification": "Strong",
+    "reason": "The policy allows a destructive action but is scoped to a specific resource and protected by a strong contextual condition (MFA)."
+  },
+  {
+    "policy": "strong",
+    "provider": "ollama",
+    "model": "phi:latest",
+    "classification": "TIMEOUT",
+    "reason": "LLM output failed schema validation:\n{'policy': {'Version': '2022-10-17', 'Statement': [{'Effect': 'Allow', 'Action': 's3:DeleteObject', 'Resource': 'arn:aws:s3:::secure-bucket/*', 'Condition': {'Bool': {'aws:MultiFactorAuthPresent': 'true'}}}]}, 'classification': 'Weak | Strong', 'reason': 'The IAM policy allows the action of deleting objects from a secure bucket without requiring multi-factor authentication, which is considered weak security.'}"
+  },
+  {
+    "policy": "strong",
+    "provider": "ollama",
+    "model": "llama3.2:latest",
+    "classification": "Strong",
+    "reason": "Policy enforces MFA for destructive action, limiting blast radius."
+  }
+]
